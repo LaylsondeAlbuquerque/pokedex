@@ -1,1 +1,6 @@
+@if (loadingService.isLoading()) {
+  <app-loading 
+    animate.leave="recolhendo"  />
+}
+
 <router-outlet></router-outlet>

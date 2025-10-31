@@ -1,0 +1,105 @@
+/* :host é o seletor do seu componente <app-loading> */
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  display: block;
+  overflow: hidden;
+  
+  /* Transição para o host desaparecer (fade out) */
+  transition: opacity 600ms ease-in-out;
+  opacity: 1; /* Estado inicial: visível */
+}
+
+/* As duas metades da tela */
+.half-top,
+.half-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Cada metade ocupa 50% da altura */
+  
+  /* Transição para as metades deslizarem na saída */
+  transition: transform 600ms ease-in-out;
+}
+
+.half-top {
+  top: 0;
+  background-color: red; /* Metade superior vermelha */
+  transform: translateY(0); /* Posição inicial */
+}
+
+.half-bottom {
+  bottom: 0;
+  background-color: white; /* Metade inferior branca */
+  transform: translateY(0); /* Posição inicial */
+}
+
+/* O Círculo Central (Spinner) */
+.pokeball-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;  /* Tamanho do círculo */
+  height: 80px; /* Tamanho do círculo */
+  background-color: transparent; 
+  border-radius: 50%; 
+  box-sizing: border-box; 
+  transform: translate(-50%, -50%); 
+  
+  /* 1. Borda preta sólida */
+  border: 8px solid black; 
+  
+  /* 2. A MUDANÇA: A falha transparente para criar o efeito de spinner */
+  border-top-color: transparent; 
+  
+  /* Animação de rotação */
+  animation: spin 1.5s linear infinite;
+  
+  /* Transição para desaparecer na saída */
+  transition: opacity 300ms ease-out, transform 600ms ease-in-out;
+  opacity: 1;
+}
+
+/* Ponto preto interno (que vai girar junto com o pai .pokeball-center) */
+.pokeball-center::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px; 
+  height: 30px;
+  background-color: black; 
+  border-radius: 50%;
+  transform: translate(-50%, -50%); /* Centraliza */
+}
+
+
+/* *** KEYFRAMES PARA O GIRO DO CÍRCULO *** */
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+/* *** O ESTADO DE "RECOLHENDO" (EM CSS PURO) *** */
+/* Esta parte é essencial para a animação de saída */
+
+:host.recolhendo {
+  opacity: 0;
+}
+
+:host.recolhendo .half-top {
+  transform: translateY(-100%);
+}
+
+:host.recolhendo .half-bottom {
+  transform: translateY(100%);
+}
+
+:host.recolhendo .pokeball-center {
+  opacity: 0;
+}
