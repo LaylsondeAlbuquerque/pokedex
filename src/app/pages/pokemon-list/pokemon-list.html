@@ -2,4 +2,14 @@
 
     <h1>Pokédex (Gen One)</h1>
 
+    <ul class="pokemon-grid">
+        @for (pokemon of pokemonList(); track pokemon.name) {
+            <li class="pokemon-card">
+                <a [routerLink]="['/detal', pokemon.name]">
+                    {{pokemon.name}}
+                </a>
+            </li>
+        }
+    </ul>
+
 </main>
