@@ -9,3 +9,21 @@ export interface PokemonListResponse {
     previous: string | null;
     results: PokemonResult[];
 }
+
+export interface PokemonColor {
+  name: string;
+  color1: string;
+  color2: string;
+}
+
+export interface PokemonSprites {
+  front_default: string; 
+}
+
+export interface PokemonDetail {
+  id: number;
+  name: string;
+  height: number;
+  weight: number;
+  sprites: PokemonSprites;
+}

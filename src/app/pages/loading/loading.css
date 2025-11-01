@@ -28,7 +28,7 @@
 
 .half-top {
   top: 0;
-  background-color: red; /* Metade superior vermelha */
+  background-color: #ff0000; /* Metade superior vermelha */
   transform: translateY(0); /* Posição inicial */
 }
 

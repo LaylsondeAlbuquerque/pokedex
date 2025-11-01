@@ -16,7 +16,7 @@ import { LoadingService } from '../../services/loading-service';
 
 // Component Class
 export class PokemonList {
-  // Injects
+  // Injects/Dependências
   private pokemonService = inject(Pokemon);
   private isLoadingService = inject(LoadingService);
 
@@ -38,7 +38,7 @@ export class PokemonList {
           this.pokemonList.set(dataApi.results);
           setTimeout(() => {
             this.isLoading.set(false);
-          }, 2000);
+          }, 1000);
         },
 
         error: (err) => {

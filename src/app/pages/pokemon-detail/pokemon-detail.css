@@ -1,0 +1,78 @@
+:host {
+  display: block;
+  font-family: sans-serif;
+  padding: 1.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.back-link:hover {
+  background-color: #e0e0e0;
+}
+
+.loading, .error {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 3rem;
+  color: #777;
+}
+
+.error {
+  color: #D8000C;
+  background-color: #FFD2D2;
+  border: 1px solid #D8000C;
+  border-radius: 8px;
+}
+
+.detail-card {
+  max-width: 400px;
+  margin: 2rem auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  /* O 'background' será aplicado dinamicamente pelo [ngStyle]! */
+  color: white; /* Assumindo que as cores serão escuras o suficiente */
+}
+
+.pokemon-image {
+  width: 200px;
+  height: 200px;
+  image-rendering: pixelated; /* Para a arte pixelada ficar nítida */
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+  margin-top: -60px; /* Faz a imagem "flutuar" para fora do card */
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.pokemon-info {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.pokemon-name {
+  text-transform: capitalize;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.pokemon-info p {
+  font-size: 1.1rem;
+  margin: 0.5rem;
+}

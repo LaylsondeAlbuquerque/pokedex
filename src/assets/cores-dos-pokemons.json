@@ -1,0 +1,757 @@
+[
+{
+"name": "bulbasaur",
+"color1": "#78C850",
+"color2": "#40E0D0"
+},
+{
+"name": "ivysaur",
+"color1": "#78C850",
+"color2": "#F85888"
+},
+{
+"name": "venusaur",
+"color1": "#78C850",
+"color2": "#F85888"
+},
+{
+"name": "charmander",
+"color1": "#F08030",
+"color2": "#F8D030"
+},
+{
+"name": "charmeleon",
+"color1": "#C03028",
+"color2": "#F8D030"
+},
+{
+"name": "charizard",
+"color1": "#F08030",
+"color2": "#48D0B0"
+},
+{
+"name": "squirtle",
+"color1": "#6890F0",
+"color2": "#B6A136"
+},
+{
+"name": "wartortle",
+"color1": "#6890F0",
+"color2": "#B6A136"
+},
+{
+"name": "blastoise",
+"color1": "#6890F0",
+"color2": "#B6A136"
+},
+{
+"name": "caterpie",
+"color1": "#78C850",
+"color2": "#F8D030"
+},
+{
+"name": "metapod",
+"color1": "#78C850",
+"color2": "#90EE90"
+},
+{
+"name": "butterfree",
+"color1": "#A040A0",
+"color2": "#000000"
+},
+{
+"name": "weedle",
+"color1": "#B6A136",
+"color2": "#F85888"
+},
+{
+"name": "kakuna",
+"color1": "#F8D030",
+"color2": "#000000"
+},
+{
+"name": "beedrill",
+"color1": "#F8D030",
+"color2": "#000000"
+},
+{
+"name": "pidgey",
+"color1": "#B6A136",
+"color2": "#F5EAAA"
+},
+{
+"name": "pidgeotto",
+"color1": "#B6A136",
+"color2": "#C03028"
+},
+{
+"name": "pidgeot",
+"color1": "#B6A136",
+"color2": "#F8D030"
+},
+{
+"name": "rattata",
+"color1": "#A040A0",
+"color2": "#F5EAAA"
+},
+{
+"name": "raticate",
+"color1": "#B6A136",
+"color2": "#F5EAAA"
+},
+{
+"name": "spearow",
+"color1": "#B6A136",
+"color2": "#C03028"
+},
+{
+"name": "fearow",
+"color1": "#B6A136",
+"color2": "#C03028"
+},
+{
+"name": "ekans",
+"color1": "#A040A0",
+"color2": "#F8D030"
+},
+{
+"name": "arbok",
+"color1": "#A040A0",
+"color2": "#C03028"
+},
+{
+"name": "pikachu",
+"color1": "#F8D030",
+"color2": "#C03028"
+},
+{
+"name": "raichu",
+"color1": "#F08030",
+"color2": "#F8D030"
+},
+{
+"name": "sandshrew",
+"color1": "#F8D030",
+"color2": "#D2B48C"
+},
+{
+"name": "sandslash",
+"color1": "#F8D030",
+"color2": "#B6A136"
+},
+{
+"name": "nidoran-f",
+"color1": "#98D8D8",
+"color2": "#00008B"
+},
+{
+"name": "nidorina",
+"color1": "#98D8D8",
+"color2": "#00008B"
+},
+{
+"name": "nidoqueen",
+"color1": "#6890F0",
+"color2": "#F5EAAA"
+},
+{
+"name": "nidoran-m",
+"color1": "#A040A0",
+"color2": "#FF00FF"
+},
+{
+"name": "nidorino",
+"color1": "#A040A0",
+"color2": "#FF00FF"
+},
+{
+"name": "nidoking",
+"color1": "#A040A0",
+"color2": "#A8A878"
+},
+{
+"name": "clefairy",
+"color1": "#F85888",
+"color2": "#B6A136"
+},
+{
+"name": "clefable",
+"color1": "#F85888",
+"color2": "#B6A136"
+},
+{
+"name": "vulpix",
+"color1": "#B22222",
+"color2": "#F08030"
+},
+{
+"name": "ninetales",
+"color1": "#F8D030",
+"color2": "#F08030"
+},
+{
+"name": "jigglypuff",
+"color1": "#F85888",
+"color2": "#48D0B0"
+},
+{
+"name": "wigglytuff",
+"color1": "#F85888",
+"color2": "#48D0B0"
+},
+{
+"name": "zubat",
+"color1": "#6890F0",
+"color2": "#A040A0"
+},
+{
+"name": "golbat",
+"color1": "#6890F0",
+"color2": "#A040A0"
+},
+{
+"name": "oddish",
+"color1": "#6890F0",
+"color2": "#78C850"
+},
+{
+"name": "gloom",
+"color1": "#6890F0",
+"color2": "#C03028"
+},
+{
+"name": "vileplume",
+"color1": "#6890F0",
+"color2": "#C03028"
+},
+{
+"name": "paras",
+"color1": "#F08030",
+"color2": "#C03028"
+},
+{
+"name": "parasect",
+"color1": "#C03028",
+"color2": "#F08030"
+},
+{
+"name": "venonat",
+"color1": "#A040A0",
+"color2": "#C03028"
+},
+{
+"name": "venomoth",
+"color1": "#A040A0",
+"color2": "#98D8D8"
+},
+{
+"name": "diglett",
+"color1": "#B6A136",
+"color2": "#F85888"
+},
+{
+"name": "dugtrio",
+"color1": "#B6A136",
+"color2": "#F85888"
+},
+{
+"name": "meowth",
+"color1": "#F5EAAA",
+"color2": "#B6A136"
+},
+{
+"name": "persian",
+"color1": "#F5EAAA",
+"color2": "#C03028"
+},
+{
+"name": "psyduck",
+"color1": "#F8D030",
+"color2": "#F5EAAA"
+},
+{
+"name": "golduck",
+"color1": "#6890F0",
+"color2": "#C03028"
+},
+{
+"name": "mankey",
+"color1": "#F5EAAA",
+"color2": "#B6A136"
+},
+{
+"name": "primeape",
+"color1": "#F5EAAA",
+"color2": "#B6A136"
+},
+{
+"name": "growlithe",
+"color1": "#F08030",
+"color2": "#000000"
+},
+{
+"name": "arcanine",
+"color1": "#F08030",
+"color2": "#000000"
+},
+{
+"name": "poliwag",
+"color1": "#6890F0",
+"color2": "#FFFFFF"
+},
+{
+"name": "poliwhirl",
+"color1": "#6890F0",
+"color2": "#FFFFFF"
+},
+{
+"name": "poliwrath",
+"color1": "#6890F0",
+"color2": "#FFFFFF"
+},
+{
+"name": "abra",
+"color1": "#F8D030",
+"color2": "#B6A136"
+},
+{
+"name": "kadabra",
+"color1": "#F8D030",
+"color2": "#B6A136"
+},
+{
+"name": "alakazam",
+"color1": "#F8D030",
+"color2": "#B6A136"
+},
+{
+"name": "machop",
+"color1": "#A8A878",
+"color2": "#B6A136"
+},
+{
+"name": "machoke",
+"color1": "#A8A878",
+"color2": "#C03028"
+},
+{
+"name": "machamp",
+"color1": "#A8A878",
+"color2": "#F8D030"
+},
+{
+"name": "bellsprout",
+"color1": "#F8D030",
+"color2": "#78C850"
+},
+{
+"name": "weepinbell",
+"color1": "#F8D030",
+"color2": "#78C850"
+},
+{
+"name": "victreebel",
+"color1": "#F8D030",
+"color2": "#78C850"
+},
+{
+"name": "tentacool",
+"color1": "#6890F0",
+"color2": "#C03028"
+},
+{
+"name": "tentacruel",
+"color1": "#6890F0",
+"color2": "#C03028"
+},
+{
+"name": "geodude",
+"color1": "#A8A878",
+"color2": "#B6A136"
+},
+{
+"name": "graveler",
+"color1": "#A8A878",
+"color2": "#B6A136"
+},
+{
+"name": "golem",
+"color1": "#B6A136",
+"color2": "#A8A878"
+},
+{
+"name": "ponyta",
+"color1": "#F5EAAA",
+"color2": "#F08030"
+},
+{
+"name": "rapidash",
+"color1": "#F5EAAA",
+"color2": "#F08030"
+},
+{
+"name": "slowpoke",
+"color1": "#F85888",
+"color2": "#F5EAAA"
+},
+{
+"name": "slowbro",
+"color1": "#F85888",
+"color2": "#A8A878"
+},
+{
+"name": "magnemite",
+"color1": "#A8A878",
+"color2": "#6890F0"
+},
+{
+"name": "magneton",
+"color1": "#A8A878",
+"color2": "#6890F0"
+},
+{
+"name": "farfetchd",
+"color1": "#B6A136",
+"color2": "#78C850"
+},
+{
+"name": "doduo",
+"color1": "#B6A136",
+"color2": "#000000"
+},
+{
+"name": "dodrio",
+"color1": "#B6A136",
+"color2": "#000000"
+},
+{
+"name": "seel",
+"color1": "#FFFFFF",
+"color2": "#F5EAAA"
+},
+{
+"name": "dewgong",
+"color1": "#FFFFFF",
+"color2": "#F5EAAA"
+},
+{
+"name": "grimer",
+"color1": "#A040A0",
+"color2": "#705898"
+},
+{
+"name": "muk",
+"color1": "#A040A0",
+"color2": "#705898"
+},
+{
+"name": "shellder",
+"color1": "#A040A0",
+"color2": "#000000"
+},
+{
+"name": "cloyster",
+"color1": "#A040A0",
+"color2": "#000000"
+},
+{
+"name": "gastly",
+"color1": "#000000",
+"color2": "#A040A0"
+},
+{
+"name": "haunter",
+"color1": "#A040A0",
+"color2": "#000000"
+},
+{
+"name": "gengar",
+"color1": "#A040A0",
+"color2": "#C03028"
+},
+{
+"name": "onix",
+"color1": "#A8A878",
+"color2": "#D3D3D3"
+},
+{
+"name": "drowzee",
+"color1": "#F8D030",
+"color2": "#B6A136"
+},
+{
+"name": "hypno",
+"color1": "#F8D030",
+"color2": "#FFFFFF"
+},
+{
+"name": "krabby",
+"color1": "#F08030",
+"color2": "#F5EAAA"
+},
+{
+"name": "kingler",
+"color1": "#F08030",
+"color2": "#F5EAAA"
+},
+{
+"name": "voltorb",
+"color1": "#C03028",
+"color2": "#FFFFFF"
+},
+{
+"name": "electrode",
+"color1": "#C03028",
+"color2": "#FFFFFF"
+},
+{
+"name": "exeggcute",
+"color1": "#F85888",
+"color2": "#F8D030"
+},
+{
+"name": "exeggutor",
+"color1": "#B6A136",
+"color2": "#78C850"
+},
+{
+"name": "cubone",
+"color1": "#B6A136",
+"color2": "#F5EAAA"
+},
+{
+"name": "marowak",
+"color1": "#B6A136",
+"color2": "#F5EAAA"
+},
+{
+"name": "hitmonlee",
+"color1": "#B6A136",
+"color2": "#F5EAAA"
+},
+{
+"name": "hitmonchan",
+"color1": "#B6A136",
+"color2": "#C03028"
+},
+{
+"name": "lickitung",
+"color1": "#F85888",
+"color2": "#F8D030"
+},
+{
+"name": "koffing",
+"color1": "#A040A0",
+"color2": "#F8D030"
+},
+{
+"name": "weezing",
+"color1": "#A040A0",
+"color2": "#F8D030"
+},
+{
+"name": "rhyhorn",
+"color1": "#A8A878",
+"color2": "#D3D3D3"
+},
+{
+"name": "rhydon",
+"color1": "#A8A878",
+"color2": "#F5EAAA"
+},
+{
+"name": "chansey",
+"color1": "#F85888",
+"color2": "#FFFFFF"
+},
+{
+"name": "tangela",
+"color1": "#6890F0",
+"color2": "#C03028"
+},
+{
+"name": "kangaskhan",
+"color1": "#B6A136",
+"color2": "#F5EAAA"
+},
+{
+"name": "horsea",
+"color1": "#98D8D8",
+"color2": "#F5EAAA"
+},
+{
+"name": "seadra",
+"color1": "#98D8D8",
+"color2": "#F5EAAA"
+},
+{
+"name": "goldeen",
+"color1": "#F08030",
+"color2": "#FFFFFF"
+},
+{
+"name": "seaking",
+"color1": "#F08030",
+"color2": "#FFFFFF"
+},
+{
+"name": "staryu",
+"color1": "#DAA520",
+"color2": "#C03028"
+},
+{
+"name": "starmie",
+"color1": "#A040A0",
+"color2": "#C03028"
+},
+{
+"name": "mr-mime",
+"color1": "#F85888",
+"color2": "#6890F0"
+},
+{
+"name": "scyther",
+"color1": "#78C850",
+"color2": "#F5EAAA"
+},
+{
+"name": "jynx",
+"color1": "#C03028",
+"color2": "#F8D030"
+},
+{
+"name": "electabuzz",
+"color1": "#F8D030",
+"color2": "#000000"
+},
+{
+"name": "magmar",
+"color1": "#C03028",
+"color2": "#F8D030"
+},
+{
+"name": "pinsir",
+"color1": "#B6A136",
+"color2": "#A8A878"
+},
+{
+"name": "tauros",
+"color1": "#B6A136",
+"color2": "#A8A878"
+},
+{
+"name": "magikarp",
+"color1": "#C03028",
+"color2": "#F8D030"
+},
+{
+"name": "gyarados",
+"color1": "#6890F0",
+"color2": "#F8D030"
+},
+{
+"name": "lapras",
+"color1": "#6890F0",
+"color2": "#F5EAAA"
+},
+{
+"name": "ditto",
+"color1": "#A040A0",
+"color2": "#F85888"
+},
+{
+"name": "eevee",
+"color1": "#B6A136",
+"color2": "#F5EAAA"
+},
+{
+"name": "vaporeon",
+"color1": "#6890F0",
+"color2": "#F8D030"
+},
+{
+"name": "jolteon",
+"color1": "#F8D030",
+"color2": "#FFFFFF"
+},
+{
+"name": "flareon",
+"color1": "#F08030",
+"color2": "#F8D030"
+},
+{
+"name": "porygon",
+"color1": "#F85888",
+"color2": "#6890F0"
+},
+{
+"name": "omanyte",
+"color1": "#6890F0",
+"color2": "#F5EAAA"
+},
+{
+"name": "omastar",
+"color1": "#6890F0",
+"color2": "#F5EAAA"
+},
+{
+"name": "kabuto",
+"color1": "#B6A136",
+"color2": "#000000"
+},
+{
+"name": "kabutops",
+"color1": "#B6A136",
+"color2": "#F5EAAA"
+},
+{
+"name": "aerodactyl",
+"color1": "#A8A878",
+"color2": "#A040A0"
+},
+{
+"name": "snorlax",
+"color1": "#394867",
+"color2": "#F5EAAA"
+},
+{
+"name": "articuno",
+"color1": "#98D8D8",
+"color2": "#00008B"
+},
+{
+"name": "zapdos",
+"color1": "#F8D030",
+"color2": "#000000"
+},
+{
+"name": "moltres",
+"color1": "#F08030",
+"color2": "#F8D030"
+},
+{
+"name": "dratini",
+"color1": "#6890F0",
+"color2": "#FFFFFF"
+},
+{
+"name": "dragonair",
+"color1": "#6890F0",
+"color2": "#FFFFFF"
+},
+{
+"name": "dragonite",
+"color1": "#F08030",
+"color2": "#48D0B0"
+},
+{
+"name": "mewtwo",
+"color1": "#A040A0",
+"color2": "#CDBFEA"
+},
+{
+"name": "mew",
+"color1": "#F85888",
+"color2": "#98D8D8"
+}
+]

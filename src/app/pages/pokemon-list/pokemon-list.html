@@ -5,7 +5,7 @@
     <ul class="pokemon-grid">
         @for (pokemon of pokemonList(); track pokemon.name) {
             <li class="pokemon-card">
-                <a [routerLink]="['/detal', pokemon.name]">
+                <a [routerLink]="['/detail', pokemon.name]">
                     {{pokemon.name}}
                 </a>
             </li>
