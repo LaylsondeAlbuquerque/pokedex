@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Momo Trust Display', sans-serif;
+  background: radial-gradient(circle at top left, rgb(182, 210, 241), rgb(50, 134, 230),  rgb(182, 210, 241), rgb(50, 134, 230));
   margin: 0;
   padding: 4vw;
 }
