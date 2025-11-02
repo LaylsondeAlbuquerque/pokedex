@@ -1,5 +1,5 @@
 // Imports
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Pokemon } from '../../services/pokemon';
@@ -23,6 +23,24 @@ export class PokemonList {
   // Signals
   pokemonList = signal<PokemonResult[]>([]);
   isLoading = this.isLoadingService.isLoading;
+  searchTerm = signal<string>('');
+
+  //  Pesquisa
+
+  filteredList = computed(() => {
+    const term = this.searchTerm().toLowerCase(); // Pega o termo da busca
+    const list = this.pokemonList();             // Pega a lista completa
+
+    // Se não há termo, retorna a lista completa
+    if (!term) {
+      return list;
+    }
+
+    // Se há termo, filtra a lista
+    return list.filter(pokemon => 
+      pokemon.name.toLowerCase().includes(term)
+    );
+  });
 
   // Lifecycle Hook
   ngOnInit() {
@@ -48,5 +66,11 @@ export class PokemonList {
 
       });
       
+  }
+
+  // Metodos
+  onSearch(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    this.searchTerm.set(value);
   }
 }
