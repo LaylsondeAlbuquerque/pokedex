@@ -1,86 +1,138 @@
-// src/app/pages/pokemon-detail/pokemon-detail.ts
+/**
+ * @file pokemon-detail.ts
+ * @author Laylson Albuquerque
+ * @version 1.0
+ *
+ * @description
+ * Lógica do Componente de Página de Detalhes (PokemonDetailComponent).
+ * * Este componente é responsável por:
+ * 1. Ler um parâmetro (o nome do Pokémon) da URL.
+ * 2. Buscar dados de duas fontes diferentes usando o PokemonService:
+ * - Detalhes do Pokémon (ID, nome, imagem) da PokéAPI externa.
+ * - Cores do Pokémon (para estilização) do JSON local.
+ * 3. Combinar essas duas fontes de dados usando `forkJoin`.
+ * 4. Exibir os dados em Signals para o template.
+ */
+
+// ==========================================================================
+// 1. IMPORTAÇÕES DE MÓDULOS E DEPENDÊNCIAS
+// ==========================================================================
 import { Component, OnInit, inject, signal } from '@angular/core';
-// 1. Importe NgStyle para podermos usar [ngStyle] (estilos dinâmicos)
+
+// NgStyle é necessário para aplicar estilos CSS dinâmicos no template (ex: [ngStyle])
 import { NgStyle } from '@angular/common'; 
-// 2. Importe o RouterLink (para o botão "Voltar") e o ActivatedRoute (para ler a URL)
+// RouterLink para o link "Voltar", ActivatedRoute para ler a URL
 import { RouterLink, ActivatedRoute } from '@angular/router';
-// 3. Importe 'forkJoin' (o operador para múltiplas chamadas)
+// forkJoin do RxJS para executar múltiplos Observables em paralelo
 import { forkJoin } from 'rxjs';
 
-// 4. Importe o Serviço e TODAS as nossas interfaces de detalhes
-import { Pokemon } from '../../services/pokemon';
-import { PokemonDetail, PokemonColor } from '../../models/pokemon';
+// Importa o Serviço (assumindo que 'Pokemon' é o 'PokemonService')
+import { Pokemon } from '../../services/pokemon'; 
+// Importa as interfaces (contratos de dados)
+import { PokemonDetail, PokemonColor } from '../../models/pokemon'; 
 
+// ==========================================================================
+// 2. DECORATOR DO COMPONENTE
+// ==========================================================================
 @Component({
-  selector: 'app-pokemon-detail',
-  standalone: true,
-  imports: [RouterLink, NgStyle], 
-  templateUrl: './pokemon-detail.html',
-  styleUrl: './pokemon-detail.css'
+  selector: 'app-pokemon-detail', // Tag HTML: <app-pokemon-detail>
+  standalone: true, // Indica que é um componente Standalone
+  imports: [RouterLink, NgStyle], // Dependências que o template usa
+  templateUrl: './pokemon-detail.html', // Caminho para o template HTML
+  styleUrl: './pokemon-detail.css' // Caminho para os estilos
 })
 
-// Component Class
+// ==========================================================================
+// 3. CLASSE DO COMPONENTE
+// ==========================================================================
 export class PokemonDetailComponent implements OnInit {
 
-  // Injects/Dependências
-  private route = inject(ActivatedRoute);
-  private pokemonService = inject(Pokemon);
+  // --- 3.1. Injeção de Dependências ---
+  // 'inject(ActivatedRoute)' obtém informações sobre a rota ativa (incluindo parâmetros da URL)
+  private route = inject(ActivatedRoute); 
+  // 'inject(Pokemon)' obtém a instância singleton do nosso serviço de dados
+  private pokemonService = inject(Pokemon); 
 
-  // Signals
+  // --- 3.2. Gerenciamento de Estado (Signals) ---
+  // Signal para armazenar os detalhes do Pokémon (ou nulo se ainda não carregado)
   pokemon = signal<PokemonDetail | null>(null);
+  // Signal para armazenar as cores do Pokémon (ou nulo se não encontrado)
   colors = signal<PokemonColor | null>(null);
+  // Signal para controlar a exibição do estado de "carregando"
   isLoading = signal<boolean>(true);
+  // Signal para armazenar qualquer mensagem de erro
   error = signal<string | null>(null);
 
+  /**
+   * @function ngOnInit
+   * @description
+   * Método de ciclo de vida do Angular. É executado UMA VEZ
+   * quando o componente é inicializado. Perfeito para buscar dados.
+   */
   ngOnInit() {
-    this.isLoading.set(true);
+    this.isLoading.set(true); // Inicia o carregamento
 
-    // Capitura o nome do pokémon da URL
+    // --- 3.3. Leitura do Parâmetro da Rota ---
+    // 'snapshot' pega uma "foto" da rota no momento do carregamento
+    // 'paramMap.get('name')' lê o parâmetro ':name' que definimos em app.routes.ts
     const pokemonName = this.route.snapshot.paramMap.get('name');
 
-    // Caso o pokémon não não seja encontrado
+    // Validação: se nenhum nome for passado na URL, define um erro e para
     if (!pokemonName) {
       this.error.set('Pokémon não encontrado na URL.');
       this.isLoading.set(false);
-      return; 
+      return; // Interrompe a execução do ngOnInit
     }
 
-    // Observables
+    // --- 3.4. Preparação dos Observables ---
+    // Prepara o "cardápio" (Observable) para buscar os detalhes
     const details$ = this.pokemonService.getPokemonDetails(pokemonName);
+    // Prepara o "cardápio" (Observable) para buscar o JSON de cores
     const colors$ = this.pokemonService.getPokemonColors();
 
-    // 11. Use 'forkJoin' para fazer os dois pedidos ao mesmo tempo
-    //     'forkJoin' é como um "garçom" que espera que TODOS os pedidos
-    //     estejam prontos antes de trazer qualquer coisa para a mesa.
+    // --- 3.5. Execução em Paralelo com forkJoin ---
+    // 'forkJoin' espera que AMBOS os observables (details$ e colors$)
+    // sejam concluídos com sucesso antes de emitir um valor.
     forkJoin({
-      details: details$,   // O pedido de detalhes
-      allColors: colors$   // O pedido de todas as cores
+      details: details$,   // O resultado será 'result.details'
+      allColors: colors$   // O resultado será 'result.allColors'
     })
-    .subscribe({
-      // 12. 'next' só é chamado quando AMBOS os pedidos terminam
+    .subscribe({ // Faz o "pedido" (inicia as chamadas de API)
+      
+      /**
+       * 'next' é chamado quando AMBOS os pedidos terminam com sucesso.
+       * @param result - Um objeto { details: PokemonDetail, allColors: PokemonColor[] }
+       */
       next: (result) => {
-        // 'result' é um objeto: { details: PokemonDetail, allColors: PokemonColor[] }
+        // Desestruturação do objeto 'result' para variáveis locais
         const { details, allColors } = result;
 
-        // 13. Agora, encontre as cores para ESTE Pokémon
+        // Procura no array de cores local pelo Pokémon correspondente
         const foundColors = allColors.find(c => c.name === details.name);
 
-        // 14. Finalmente, atualize nossos Signals
+        // Atualiza os signals com os dados encontrados
         this.pokemon.set(details);
         if (foundColors) {
+          // Se encontrou as cores, armazena-as no signal 'colors'
           this.colors.set(foundColors);
         }
         
+        // Logs de depuração
         console.log('Detalhes:', details);
         console.log('Cores encontradas:', foundColors);
 
-        this.isLoading.set(false); // Terminou de carregar
+        this.isLoading.set(false); // Para o carregamento
       },
-      // 15. 'error' é chamado se QUALQUER UM dos pedidos falhar
+      
+      /**
+       * 'error' é chamado se QUALQUER UM dos pedidos (details$ ou colors$) falhar.
+       * @param err - O objeto de erro (HttpErrorResponse)
+       */
       error: (err) => {
         console.error('Falha ao buscar dados combinados:', err);
+        // Define a mensagem de erro personalizada para o usuário
         this.error.set('Falha ao carregar dados do Pokémon.');
-        this.isLoading.set(false);
+        this.isLoading.set(false); // Para o carregamento, mesmo com erro
       }
     });
   }

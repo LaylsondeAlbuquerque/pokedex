@@ -1,32 +1,56 @@
+/**
+ * @file pokemon-list.css
+ * @author Laylson Albuquerque
+ * @version 1.0
+ *
+ * @description
+ * Folha de estilos para a página de lista de Pokémon (PokemonListComponent).
+ * Define o layout do cabeçalho (título e busca) e da grade principal
+ * de Pokémon, que é estilizada para parecerem Pokébolas.
+ */
+
+
+/* ==========================================================================
+   1. LAYOUT DO CABEÇALHO
+   ========================================================================== */
+
 header {
-  display: grid;
-  justify-items: right;
+  display: grid; /* Usa grid para organizar título e busca */
+  justify-items: right; /* Alinha os itens (a busca) à direita por padrão */
 }
 
 h1 {
-  justify-self: stretch;
+  justify-self: stretch; /* Faz o H1 ignorar o 'justify-items' e ocupar toda a largura */
   margin: 6rem 2rem 2rem 2rem;
   padding: 1vw;
-  border-bottom: 2px solid #333;
-  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.685);  
+  border-bottom: 2px solid #333; /* Linha separadora abaixo do título */
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.685); /* Sombra sutil */
   text-align: center;
   color: #333;
-  font-size: clamp(4rem, 6vw, 7rem);
+  /* Fonte responsiva: mínimo 4rem, preferido 6vw, máximo 7rem */
+  font-size: clamp(4rem, 6vw, 7rem); 
 }
 
 .search-bar {
   display: block;
-  width: 40vw;
-  max-width: 30rem;
+  width: 40vw; /* Largura responsiva */
+  max-width: 30rem; /* Limite máximo de largura */
   padding: 0.75rem;
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-size: clamp(1rem, 1.5vw, 1.5rem); /* Fonte responsiva */
   margin: 0.5rem 2rem 6rem 2rem;
   border: 2px solid #333;
   border-radius: 8px;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Garante que o padding não afete a largura total */
 }
 
+
+/* ==========================================================================
+   2. LAYOUT DA GRADE DE POKÉMON
+   ========================================================================== */
+
+/* Estilo para a mensagem exibida quando o @for está vazio (ex: busca sem resultados). */
 .empty-state {
+  /* Faz este item ocupar todas as colunas do grid (do início ao fim). */
   grid-column: 1 / -1; 
   width: 100%;
   text-align: center;
@@ -36,36 +60,50 @@ h1 {
   box-sizing: border-box; 
 }
 
+/* O container (<ul>) que agrupa todos os cards de Pokémon. */
 .pokemon-grid {
   display: grid;
+  /* Cria colunas de 200px. 'auto-fill' adiciona quantas colunas 
+     couberem na tela e 'repeat' cuida da repetição. */
   grid-template-columns: repeat(auto-fill, 200px);
-  justify-content: center;
+  justify-content: center; /* Centraliza a grade na tela */
   gap: 1rem;
-  list-style: none;
+  list-style: none; /* Remove os marcadores (bolinhas) da <ul> */
   padding: 2vw;
 }
 
+
+/* ==========================================================================
+   3. ESTILO DO CARD (POKÉBOLA)
+   ========================================================================== */
+
+/* O link <a> dentro do <li>, estilizado como uma Pokébola. */
 .pokemon-card a {
   display: block;
   width: auto;
   height: auto;
   padding: 5.26rem 1rem;
+  
+  /* O truque da Pokébola: um gradiente linear que corta 
+     exatamente em 50% (vermelho em cima, branco embaixo). */
   background: linear-gradient(to bottom, #ff0000 50%, #ffffff 50%);
+  
   border: 2px solid #333;
-  border-radius: 50%;
+  border-radius: 50%; /* Transforma o card em um círculo perfeito */
   text-align: center;
-  text-decoration: none;
-  color: #000000;
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: #000000; /* Cor do nome do Pokémon */
   font-weight: 600;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  text-shadow: 0px 0px 2px rgb(255, 255, 255);
-  text-transform: capitalize;
-  transition: all 0.2s ease-in-out;
+  font-size: clamp(1rem, 1.5vw, 1.25rem); /* Fonte responsiva */
+  text-shadow: 0px 0px 2px rgb(255, 255, 255); /* Sombra clara para legibilidade */
+  text-transform: capitalize; /* Deixa a primeira letra maiúscula */
+  transition: all 0.2s ease-in-out; /* Animação suave para o :hover */
 }
 
+/* Efeito ao passar o mouse sobre o card. */
 .pokemon-card a:hover {
-  background-color: #fff;
-  border-color: #ff0000;
-  box-shadow: 0 0px 8px rgba(255, 0, 0, 0.904);
-  transform: translateY(-2px);
+  background-color: #fff; /* Fica branco (ignora o gradiente) */
+  border-color: #ff0000; /* Borda fica vermelha */
+  box-shadow: 0 0px 8px rgba(255, 0, 0, 0.904); /* Brilho vermelho */
+  transform: translateY(-2px); /* Eleva o card levemente */
 }

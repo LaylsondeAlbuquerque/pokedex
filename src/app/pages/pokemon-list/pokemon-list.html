@@ -1,31 +1,32 @@
 <header>
 
-    <h1>Pokédex (Gen One)</h1>
+  <h1>Pokédex (Gen One)</h1>
 
-    <input 
-        type="text"
-        placeholder="Buscar Pokémon..."
-        class="search-bar"
-        (input)="onSearch($event)"
-    >
+  <input 
+    type="text"
+    placeholder="Buscar Pokémon..."
+    class="search-bar"
+    (input)="onSearch($event)"
+  >
 
 </header>
 
 <main>
 
-    <ul class="pokemon-grid">
-      @for (pokemon of filteredList(); track pokemon.name) {
-        
-        <li class="pokemon-card">
-          <a [routerLink]="['/detail', pokemon.name]">
-            {{ pokemon.name }}
-          </a>
-        </li>
-      } 
+  <ul class="pokemon-grid">
+    
+    @for (pokemon of filteredList(); track pokemon.name) {
       
-      @empty {
-        <p class="empty-state">Nenhum Pokémon encontrado.</p>
-      }
-    </ul>
+      <li class="pokemon-card">
+        <a [routerLink]="['/detail', pokemon.name]">
+          {{ pokemon.name }}
+        </a>
+      </li>
+    } 
+    
+    @empty {
+      <p class="empty-state">Nenhum Pokémon encontrado.</p>
+    }
+  </ul>
 
 </main>

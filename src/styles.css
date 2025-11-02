@@ -1,8 +1,65 @@
+/**
+ * @file styles.css
+ * @author Laylson Albuquerque
+ * @version 1.0
+ *
+ * @description
+ * Folha de estilos global (principal) para a aplicação Pokédex.
+ * Este arquivo é carregado apenas uma vez e se aplica a toda a aplicação.
+ * É responsável por:
+ * 1. Importar fontes externas (Google Fonts).
+ * 2. Definir estilos padrão para o <body> (fonte, fundo, reset).
+ */
+
+
+/* ==========================================================================
+   1. IMPORTAÇÃO DE FONTES EXTERNAS
+   ========================================================================== */
+
+/**
+ * Importa a fonte 'Momo Trust Display' do Google Fonts.
+ * Uma vez importada aqui, ela fica disponível para ser usada
+ * em 'font-family' em qualquer lugar da aplicação.
+ */
 @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
 
+
+/* ==========================================================================
+   2. ESTILOS GLOBAIS DO <body>
+   ========================================================================== */
+
+/**
+ * Define os estilos padrão para o <body>, que é o "chão"
+ * de toda a aplicação de página única (SPA).
+ */
 body {
+  /**
+   * Define a 'Momo Trust Display' (importada acima) como a fonte padrão
+   * para todo o texto da aplicação. Se ela falhar, o navegador usará
+   * a fonte 'sans-serif' padrão do sistema como fallback.
+   */
   font-family: 'Momo Trust Display', sans-serif;
-  background: radial-gradient(circle at top left, rgb(182, 210, 241), rgb(50, 134, 230),  rgb(182, 210, 241), rgb(50, 134, 230));
+
+  /**
+   * Define um fundo de gradiente radial (circular) padrão para toda a aplicação.
+   * Começa no canto superior esquerdo (at top left) e alterna entre
+   * tons de azul claro (rgb(182, 210, 241)) e azul escuro (rgb(50, 134, 230)).
+   * * (Nota: Este fundo será o padrão para a página de LISTA, mas será
+   * sobrescrito pelo PokemonDetailComponent quando o usuário
+   * navegar para a página de detalhes, graças ao 'Renderer2').
+   */
+  background: radial-gradient(circle at top left, rgb(182, 210, 241), rgb(50, 134, 230), rgb(182, 210, 241), rgb(50, 134, 230));
+
+  /**
+   * Remove a margem padrão que os navegadores colocam no <body>,
+   * garantindo que a aplicação ocupe toda a tela sem espaços em branco.
+   */
   margin: 0;
+
+  /**
+   * Adiciona um "preenchimento" (padding) responsivo ao redor de todo o conteúdo.
+   * '4vw' significa "4% da largura da tela" (viewport width),
+   * criando uma "moldura" que se ajusta ao tamanho da janela.
+   */
   padding: 4vw;
 }

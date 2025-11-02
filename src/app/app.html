@@ -1,6 +1,47 @@
+<!-- 
+  @file app.html (app.component.html)
+  @author Laylson Albuquerque
+  @version 1.0
+
+  @description
+  Template (View) principal do Componente Raiz (App).
+  Este é o "casco" da aplicação.
+-->
+
+<!-- ==========================================================================
+   1. TELA DE CARREGAMENTO (LOADING)
+   ========================================================================== -->
+
+<!-- 
+ * Bloco de controle @if (Angular 17+).
+ * Ele "escuta" o signal 'isLoading()' do 'loadingService'.
+ * O <app-loading> só será criado e renderizado na tela
+ * se 'loadingService.isLoading()' for 'true'.
+-->
 @if (loadingService.isLoading()) {
-  <app-loading 
-    animate.leave="recolhendo"  />
+  <!-- 
+   * Renderiza o nosso componente de loading.
+   * 'animate.leave="recolhendo"': Esta é uma sintaxe do Módulo de Animações
+   * do Angular (@angular/animations) que não estamos usando.
+   * A intenção aqui era provavelmente adicionar a classe CSS '.recolhendo'
+   * quando este elemento fosse removido (ex: [class.recolhendo]="!loadingService.isLoading()").
+   * No entanto, como o @if o remove instantaneamente, o 'setTimeout'
+   * no 'pokemon-list.ts' garante que o loading dure o suficiente
+   * para a animação CSS (definida no loading.css) ser vista.
+  -->
+  <app-loading 
+    animate.leave="recolhendo"  />
 }
 
+
+<!-- ==========================================================================
+   2. O "PALCO" DAS ROTAS
+   ========================================================================== -->
+
+<!-- 
+ * O <router-outlet> é o "placeholder" ou "palco" principal.
+ * O Roteador do Angular (controlado pelo app.routes.ts) irá
+ * injetar dinamicamente o componente da página ativa (seja
+ * 'PokemonList' ou 'PokemonDetailComponent') aqui dentro.
+-->
 <router-outlet></router-outlet>

@@ -1,31 +1,108 @@
-<a routerLink="/list" class="back-link" [ngStyle]="{
-      'background-color': `${colors()?.color1}`
-    }"><img class="seta" src="../../../assets/Seta.png" alt="seta"> <p class="text-bottom">LISTA</p></a>
+<!-- 
+  @file pokemon-detail.html
+  @author Laylson Albuquerque
+  @version 1.0
 
+  @description
+  Template (View) para a página de detalhes do Pokémon.
+  Usa a sintaxe de Bloco de Controle (@if) do Angular 17+ para renderizar
+  condicionalmente o estado de carregamento, o estado de erro, ou os dados
+  do Pokémon. Também utiliza [ngStyle] para aplicar cores dinâmicas
+  com base nos dados recebidos.
+-->
+
+
+<!-- ==========================================================================
+   1. LINK DE "VOLTAR"
+   ========================================================================== -->
+
+<!-- 
+ * Esta é a tag de âncora (link) para navegação.
+ * * routerLink="/list": 
+ * Diretiva do Angular que instrui o Roteador a navegar para a rota "/list"
+ * quando clicado, sem recarregar a página (comportamento de SPA).
+ *
+ * [ngStyle]="{...}":
+ * Diretiva do Angular (Property Binding) que aplica estilos CSS dinamicamente.
+ * Aqui, ela define o 'background-color' do botão para a 'color1' do Pokémon.
+ *
+ * colors()?.color1:
+ * Lê o signal 'colors'. O '?' (optional chaining) é uma proteção
+ * que previne um erro caso 'colors()' seja 'null' ou 'undefined'
+ * no momento da renderização.
+-->
+<a routerLink="/list" class="back-link" [ngStyle]="{
+    'background-color': `${colors()?.color1}`
+  }"><img class="seta" src="../../../assets/Seta.png" alt="seta"> <p class="text-bottom">LISTA</p></a>
+
+
+<!-- ==========================================================================
+   2. RENDERIZAÇÃO CONDICIONAL (ESTADOS DA PÁGINA)
+   ========================================================================== -->
+
+<!-- 
+ * 1. Estado de Carregamento:
+ * O bloco @if é renderizado se a expressão (isLoading()) for verdadeira.
+ * 'isLoading' é um signal booleano definido no arquivo .ts.
+-->
 @if (isLoading()) {
   <p class="loading">Carregando detalhes...</p>
 }
 
+<!-- 
+ * 2. Estado de Erro:
+ * Renderizado se o signal 'error()' tiver um valor (não for nulo).
+ * 'as errorMessage' cria uma variável de template local chamada 'errorMessage'
+ * que contém o valor do signal 'error()', facilitando seu uso.
+-->
 @if (error(); as errorMessage) {
   <p class="error">{{ errorMessage }}</p>
 }
 
+<!-- 
+ * 3. Estado de Sucesso (Dados Carregados):
+ * Renderizado se o signal 'pokemon()' tiver um valor (não for nulo).
+ * 'as poke' cria uma variável de template local 'poke' para fácil
+ * acesso aos dados do Pokémon (ex: poke.name em vez de pokemon().name).
+-->
 @if (pokemon(); as poke) {
 
+  <!-- 
+   * O card principal de detalhes.
+   * [ngStyle] é usado novamente para aplicar um fundo CSS 'linear-gradient'
+   * que utiliza as duas cores (color1 e color2) lidas do signal 'colors()'.
+  -->
   <div 
     class="detail-card" 
     [ngStyle]="{
       'background': 'linear-gradient(180deg, ' + colors()?.color1 + ', ' + colors()?.color2 + ')'
     }"
   >
+    <!-- 
+     * Imagem do Pokémon.
+     * [src] (Property Binding) define dinamicamente a URL da imagem
+     * com base no valor de 'poke.sprites.front_default'.
+     * [alt] (Property Binding) define o texto alternativo para acessibilidade.
+    -->
     <img 
       class="pokemon-image"
       [src]="poke.sprites.front_default" 
       [alt]="poke.name"
     >
     
+    <!-- Container para as informações de texto. -->
     <div class="pokemon-info">
+      <!-- 
+       * Interpolação de dados ( {{ ... }} )
+       * Exibe os valores das propriedades do objeto 'poke'.
+      -->
       <h2 class="pokemon-name">{{ poke.name }} (#{{ poke.id }})</h2>
+      
+      <!-- 
+       * A API retorna altura/peso em decímetros/hectogramas.
+       * Fazemos a conversão (dividindo por 10) diretamente no template
+       * para exibir os valores em metros (m) e quilogramas (kg).
+      -->
       <p>Altura: {{ poke.height / 10 }} m</p>
       <p>Peso: {{ poke.weight / 10 }} kg</p>
     </div>
