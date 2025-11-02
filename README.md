@@ -1,59 +1,74 @@
-# Pokedex
+<h1 align="center">Pokédex com Angular</h1>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+<p align="center">
+  <a href="https://laylsondealbuquerque.github.io/pokedex/list">
+    <img src="https://img.shields.io/badge/Ver_Pokédex_Online!-FF0000?style=for-the-badge&logo=angular&logoColor=white" alt="Ver Pokédex Online" />
+  </a>
+</p>
 
-## Development server
+---
 
-To start a local development server, run:
+## Sobre o Projeto
 
-```bash
-ng serve
-```
+Este é um projeto de estudo focado em **Angular (v17+)**, onde pude construir uma Single Page Application (SPA) completa. A aplicação consome a API pública [PokéAPI](https://pokeapi.co/) para buscar dados reais de Pokémon e os combina com um arquivo JSON local (criado por mim) para a estilização dinâmica.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+O desenvolvimento foi uma jornada de aprendizado intensiva sobre os conceitos mais modernos de front-end, desde o consumo de APIs e roteamento até o gerenciamento de estado reativo com **Signals**, que é a nova base do Angular.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Funcionalidades
 
-```bash
-ng generate component component-name
-```
+- [x] Listagem dos 151 Pokémon da primeira geração.
+- [x] Tela de loading ("Pokébola") personalizada com animação em CSS.
+- [x] Sistema de busca (filtro) em tempo real na lista de Pokémon.
+- [x] Roteamento para uma página de detalhes de cada Pokémon (SPA).
+- [x] Página de detalhes com informações da API (altura, peso, imagem).
+- [x] **Estilização Dinâmica:** O card de detalhes e o botão "Voltar" mudam de cor com base nas cores do Pokémon.
+- [x] Publicação do site (deploy) via GitHub Pages.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Tecnologias Utilizadas
 
-## Building
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## O que eu aprendi
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Este projeto foi fundamental para solidificar conceitos modernos de desenvolvimento com Angular:
 
-## Running unit tests
+* **Arquitetura de Componentes:** Separação de responsabilidades (Páginas "Smart" vs. Componentes "Dumb", como o `app-loading`).
+* **Serviços e Injeção de Dependência:** Uso da função `inject()` para desacoplar a lógica de busca de dados (consumo de API) dos componentes.
+* **Consumo de API com `HttpClient`:** Requisições `GET` para uma API externa (PokéAPI) e também para um arquivo `JSON` local (na pasta `assets`).
+* **Programação Reativa (RxJS):** Uso de `Observable`, `.subscribe()` e, principalmente, `forkJoin` para gerenciar e combinar múltiplas chamadas assíncronas (buscar detalhes e cores ao mesmo tempo).
+* **Gerenciamento de Estado com Signals:** Utilização de `signal()` para o estado (lista, loading, erro), `computed()` para criar o filtro de busca reativo, e `.set()`/`.update()` para alterar o estado.
+* **Nova Sintaxe de Template:** Uso dos blocos de controle `@for` (com `track` e `@empty`) e `@if`.
+* **Roteamento (SPA):** Configuração de `app.routes.ts`, navegação sem recarregar a página com `RouterLink` e leitura de parâmetros da URL (como `:name`) com `ActivatedRoute`.
+* **Estilização Dinâmica:** Uso da diretiva `[ngStyle]` para alterar o CSS de um componente dinamicamente com base nos dados recebidos (as cores do Pokémon).
+* **Deploy:** Publicação de um projeto Angular no GitHub Pages usando o pacote `angular-cli-ghpages`, configurando o `base-href` e ajustando o `angular.json`.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## Como Executar Localmente
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1.  Clone o repositório:
+    ```bash
+    git clone [https://github.com/laylsondealbuquerque/pokedex.git](https://github.com/laylsondealbuquerque/pokedex.git)
+    ```
+2.  Navegue até a pasta do projeto:
+    ```bash
+    cd pokedex
+    ```
+3.  Instale as dependências:
+    ```bash
+    npm install
+    ```
+4.  Execute o servidor de desenvolvimento:
+    ```bash
+    ng serve
+    ```
+5.  Abra seu navegador em `http://localhost:4200/`.
