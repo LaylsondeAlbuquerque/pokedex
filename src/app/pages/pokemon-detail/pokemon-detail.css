@@ -20,7 +20,7 @@
 .seta {
   /* clamp() cria um tamanho fluido: 
      mínimo de 1rem, preferido de 2vw, máximo de 3rem. */
-  width: clamp(1rem, 2vw, 3rem);
+  width: clamp(0.5rem, 2vw, 3rem);
   height: auto; /* Mantém a proporção */
   transform: rotate(270deg); /* Gira a seta para apontar para a esquerda */
 }
@@ -95,7 +95,7 @@
 
 /* A imagem (sprite) do Pokémon. */
 .pokemon-image {
-  width: 25vw; /* Largura responsiva baseada na tela */
+  width: 80%; /* Largura responsiva baseada na tela */
   height: auto; /* Mantém a proporção */
   
   /* Mantém a arte pixelada nítida, sem borrões */

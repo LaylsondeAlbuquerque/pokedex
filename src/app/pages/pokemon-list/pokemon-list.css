@@ -28,7 +28,7 @@ h1 {
   text-align: center;
   color: #333;
   /* Fonte responsiva: mínimo 4rem, preferido 6vw, máximo 7rem */
-  font-size: clamp(4rem, 6vw, 7rem); 
+  font-size: clamp(3rem, 6vw, 6rem); 
 }
 
 .search-bar {
