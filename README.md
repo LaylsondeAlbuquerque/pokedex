@@ -10,7 +10,7 @@
 
 ## Sobre o Projeto
 
-Este é um projeto de estudo focado em **Angular (v17+)**, onde pude construir uma Single Page Application (SPA) completa. A aplicação consome a API pública [PokéAPI](https://pokeapi.co/) para buscar dados reais de Pokémon e os combina com um arquivo JSON local (criado por mim) para a estilização dinâmica.
+Este é um projeto de estudo focado em **Angular (v20.3)**, onde pude construir uma Single Page Application (SPA) completa. A aplicação consome a API pública [PokéAPI](https://pokeapi.co/) para buscar dados reais de Pokémon e os combina com um arquivo JSON local (criado por mim) para a estilização dinâmica.
 
 O desenvolvimento foi uma jornada de aprendizado intensiva sobre os conceitos mais modernos de front-end, desde o consumo de APIs e roteamento até o gerenciamento de estado reativo com **Signals**, que é a nova base do Angular.
 
@@ -55,9 +55,11 @@ Este projeto foi fundamental para solidificar conceitos modernos de desenvolvime
 
 ## Como Executar Localmente
 
+Pré-requisitos: Git, npm e Node.js compatível com `^20.19.0 || ^22.12.0 || >=24.0.0`, conforme o Angular CLI registrado no `package-lock.json`.
+
 1.  Clone o repositório:
     ```bash
-    git clone [https://github.com/laylsondealbuquerque/pokedex.git](https://github.com/laylsondealbuquerque/pokedex.git)
+    git clone https://github.com/laylsondealbuquerque/pokedex.git
     ```
 2.  Navegue até a pasta do projeto:
     ```bash
@@ -65,10 +67,10 @@ Este projeto foi fundamental para solidificar conceitos modernos de desenvolvime
     ```
 3.  Instale as dependências:
     ```bash
-    npm install
+    npm ci
     ```
 4.  Execute o servidor de desenvolvimento:
     ```bash
-    ng serve
+    npm start
     ```
 5.  Abra seu navegador em `http://localhost:4200/`.
